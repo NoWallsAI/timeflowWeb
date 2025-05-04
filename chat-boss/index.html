@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeflow - Boss Chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .btn-back {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        }
+        @media (max-width: 640px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            .chat-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-4 py-6 min-h-screen flex flex-col">
+        <!-- Header section -->
+        <header class="py-8 mb-6">
+            <div class="header-content flex items-center justify-between max-w-6xl mx-auto">
+                <h1 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Timeflow - Boss Portal</h1>
+                <a href="../index.html" class="btn-back text-white py-2 px-4 rounded-lg font-medium shadow-lg transform transition hover:scale-105 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Back to Home
+                </a>
+            </div>
+        </header>
+        
+        <!-- Chat embed container -->
+        <div class="flex-grow flex items-center justify-center mb-8">
+            <div class="w-full max-w-5xl bg-white rounded-2xl shadow-xl overflow-hidden p-6 md:p-8 chat-container">
+                <h2 class="text-2xl md:text-3xl font-semibold mb-8 text-center text-gray-800">Management Assistant</h2>
+                
+                <!-- VOICEGLOW CHAT EMBED PLACEHOLDER - REPLACE THIS DIV WITH ACTUAL IFRAME -->
+                <div class="flex justify-center items-center w-full pb-4">
+                    <div style="width: 100%; max-width: 550px; height: 600px;" id="VG_OVERLAY_CONTAINER" class="rounded-xl">
+                        <!-- Here is where TIXAE Agents renders the widget. -->
+                        <!-- Set width, height for proper display -->
+                    </div>
+                </div>
+                    
+                <!-- Remove 'defer' if you want widget to load faster (Will affect website loading) -->
+                <script defer>
+                    (function() {
+                        window.VG_CONFIG = {
+                            ID: "s1AgD99pMkmrbUv33ba6",
+                            region: 'na', // 'eu' or 'na'corresponding to Europe and North America
+                            render: 'full-width', // popup or full-width
+                            // modalMode: true, // Set this to 'true' to open the widget in modal mode
+                            stylesheets: [
+                                // Base TIXAE Agents CSS
+                                "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
+                                // Add your custom css stylesheets, Can also add relative URL ('/public/your-file.css)
+                            ],
+                            // (SHOULD BE REMOVED OR CHANGED, PROVIDED AS AN EXAMPLE TO USE)
+                            // user: {
+                            //     name: 'John Doe', // User's name
+                            //     email: 'johndoe@gmail.com', // User's email
+                            //     phone: '+1234567890', // User's phone number
+                            // }
+                            //
+                            // **
+                            // userID: 'USER_ID', // If you want to use your own user_id
+                            // autostart: true, // Whether to autostart the chatbot with the proactive message
+                        }
+                        var VG_SCRIPT = document.createElement("script");
+                        VG_SCRIPT.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
+                        VG_SCRIPT.defer = true; // Remove 'defer' if you want widget to load faster (Will affect website loading)
+                        document.body.appendChild(VG_SCRIPT);
+                    })()
+                </script>
+                <!-- END OF VOICEGLOW CHAT EMBED PLACEHOLDER -->
+                
+                <p class="mt-6 text-sm text-gray-500 text-center">How can I help you manage your team today?</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="py-6 text-center text-gray-500 text-sm mt-auto">
+            © 2023 Timeflow. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
